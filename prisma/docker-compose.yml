@@ -1,0 +1,34 @@
+version: '3'
+services:
+  prisma:
+    image: prismagraphql/prisma:1.29
+    restart: always
+    ports:
+    - "4466:4466"
+    environment:
+      PRISMA_CONFIG: |
+        port: 4466
+        #
+        # PRISMA_MANAGEMENT_API_SECRET=supersercret4unknownpeople
+        # managementApiSecret: supersercret4unknownpeople
+        #
+        databases:
+          default:
+            connector: postgres
+            host: ec2-79-125-2-142.eu-west-1.compute.amazonaws.com
+            port: '5432'
+            database: d3e2u4g6f75pl6
+            ssl: true
+            user: scjiuohzjxbmbm
+            password: 9f9fb90ea4dd667cf10835a04dac905093ed809afc125e1cf904b3afed6a99d3
+            rawAccess: true
+            migrations: true
+        #
+        # if prisma deploy -e doesnt work correctly
+        # Server at default requires the Management API secret.
+        # Please set the the ! PRISMA_MANAGEMENT_API_SECRET environment variable.
+        #
+        # npm install -g prisma@beta
+        # docker-compose up -d
+        # prisma deploy -e ../config/prod.env
+        #

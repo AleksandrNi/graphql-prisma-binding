@@ -1,0 +1,7 @@
+endpoint: http://192.168.99.100:4466
+datamodel: datamodel.prisma
+secret: supersercret4unknownpeople
+
+generate:
+   - generator: graphql-schema
+     output: ./generated/
