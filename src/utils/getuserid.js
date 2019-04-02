@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-const secret = 'mysecrettoken10'
+const secret = process.env.JWT_SECRET
 
 // // key, secret
 // const token = jwt.sign({ id: 46 }, 'mysecret')
